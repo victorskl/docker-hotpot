@@ -10,6 +10,7 @@ git clone https://github.com/elmarquez/nabemono.git
 
 docker image build -t nabemono .
 
+mkdir -p ./mongo/db
 docker-compose -f standalone.yml -p dev up -d
 ```
 
