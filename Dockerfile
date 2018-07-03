@@ -2,7 +2,7 @@ FROM node:carbon as builder
 COPY ./nabemono /nabemono
 WORKDIR /nabemono
 RUN npm install
-RUN npm build
+RUN npm run build
 
 FROM node:carbon
 WORKDIR /nabemono
