@@ -1,10 +1,10 @@
-FROM node:carbon-alpine as builder
+FROM node:carbon as builder
 COPY ./nabemono /nabemono
 WORKDIR /nabemono
 RUN npm install
 RUN npm build
 
-FROM node:carbon-alpine
+FROM node:carbon
 WORKDIR /nabemono
 COPY --from=builder /nabemono .
 CMD ["npm", "run", "serve"]
