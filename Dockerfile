@@ -1,10 +1,11 @@
 FROM node:carbon as builder
-COPY ./nabemono /nabemono
-WORKDIR /nabemono
+COPY ./hotpot /hotpot
+COPY ./secrets.json.sample /etc/hotpot/secrets.json
+WORKDIR /hotpot
 RUN npm install
 RUN npm run build
 
 FROM node:carbon
-WORKDIR /nabemono
-COPY --from=builder /nabemono .
+WORKDIR /hotpot
+COPY --from=builder /hotpot .
 CMD ["npm", "run", "serve"]

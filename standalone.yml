@@ -12,8 +12,10 @@ services:
     container_name: mongodb
     restart: always
 
-  nabemono:
-    image: nabemono:latest
+  hotpot:
+    image: hotpot:latest
+    volumes:
+      - ./secrets.json:/etc/hotpot/secrets.json
     depends_on:
       - mongodb
     network_mode: "service:mongodb"
