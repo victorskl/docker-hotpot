@@ -3,3 +3,4 @@
 hotpot
 mongo
 secrets.json
+.env

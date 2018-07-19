@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+
+  hotpot:
+    image: hotpot:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./secrets.json:/etc/hotpot/secrets.json
+    env_file: .env
+    restart: always
+
